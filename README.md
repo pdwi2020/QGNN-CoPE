@@ -57,18 +57,21 @@ To demonstrate economic value, the QW-GNN was adapted to predict the full **forw
 ### Finding 1: QW-GNN Outperforms Standard GNNs
 The QW-GNN was benchmarked against a state-of-the-art Graph Attention Network (GAT). The GAT model collapsed, failing to learn any meaningful patterns and defaulting to predicting the mean. In contrast, the QW-GNN successfully learned the underlying dynamics.
 
+<img width="1504" height="712" alt="model comp2" src="https://github.com/user-attachments/assets/70bca2f5-0ea8-4a48-a7c4-f5b922f2ee19" />
 
 *Figure 1: Comparison showing the QW-GNN (orange) successfully tracking volatility while the GAT (green) collapses.*
 
 ### Finding 2: Granger Causality Improves Forecast Quality
 The model's performance was significantly enhanced when using the more meaningful Granger Causality graph. While the MAE metric was comparable, the visual quality and responsiveness of the forecast improved dramatically, more closely tracking volatility spikes.
 
+<img width="1495" height="712" alt="qw-gnn performance on granger causality" src="https://github.com/user-attachments/assets/37213427-9f71-49d0-adf6-cbe067f01c8b" />
 
 *Figure 2: QW-GNN predictions on the Granger Causality graph (red) show a much tighter fit to actual volatility (blue) compared to the correlation-based model.*
 
 ### Finding 3: The "Quantum" Component is Essential (Ablation Study)
 An ablation study was conducted to prove the value of the quantum walk propagator. A `ClassicalGNN` (using a simple `A @ X` convolution) was tested. The results were definitive.
 
+<img width="1495" height="712" alt="ablation study" src="https://github.com/user-attachments/assets/9459f0df-663c-4be3-8a83-9309e9aa3b47" />
 
 *Figure 3: The ablated Classical GNN (purple) performs significantly worse than the QW-GNN (orange), proving the quantum-inspired propagator is the key to the model's success.*
 
@@ -82,6 +85,7 @@ An ablation study was conducted to prove the value of the quantum walk propagato
 ### Finding 4: The Model Generates Significant Economic Alpha
 The final backtest demonstrates the tangible value of the QW-GNN's superior risk forecasts. The GNN-driven portfolio dramatically outperformed a standard 1/N benchmark.
 
+<img width="1219" height="635" alt="gnn portfolio vs benchmark" src="https://github.com/user-attachments/assets/dbc26f7a-6458-4582-add2-9d0b2fb98483" />
 
 *Figure 4: The GNN-driven portfolio (blue) achieves superior risk-adjusted returns and capital preservation compared to the benchmark (orange).*
 
